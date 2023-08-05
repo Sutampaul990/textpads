@@ -31,7 +31,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
       showAlert("Dark Mode has been Enabled", "success");
-      document.title = 'TextUtils - Dark Mode';
+      document.title = 'TextPads - Dark Mode';
       /*setInterval(() => {
         document.title = 'TextUtils is Amazing';
       }, 2000);
@@ -44,7 +44,7 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light Mode has been Enabled", "success");
-      document.title = 'TextUtils - Light Mode';
+      document.title = 'TextPads - Light Mode';
     }
   }
 
@@ -52,14 +52,14 @@ function App() {
     <>
       {/*<Navbar/>*/}
       <Router>
-      <Navbar title="TextUtils" aboutText="About Us" mode={mode} toggleMode={toggleMode}/>
+      <Navbar title="TextPads" aboutText="About Us" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <div className="container my-3">
       <Routes>
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About mode={mode}/>} />
           
           <Route path="/"
-          element={<TextForm showAlert={showAlert} heading="Enter your Thoughts to analyze" mode={mode}/>}/>
+          element={<TextForm showAlert={showAlert} heading="Try out TextPads - Easy to Count & Easy to Use" mode={mode}/>}/>
   
       </Routes>
       </div>

@@ -1,11 +1,16 @@
-import React,{useState} from 'react'
+import React from 'react'
 
-export default function About() {
+export default function About(props) {
 
-    const [myStyle,setmyStyle] = useState({
+    /*const [myStyle,setmyStyle] = useState({
         color : 'black',
         backgroundColor: 'white'
-    })
+    })*/
+
+    let myStyle = {
+        color: props.mode==='dark'?'white':'#042743',
+        backgroundColor : props.mode==='dark'?'#042743':'white'
+    }
 
     /*const [btnText,setBtnText]= useState("Enable Dark Mode");
 
@@ -38,7 +43,7 @@ export default function About() {
             <div className="accordion-item">
                 <h2 className="accordion-header">
                 <button className="accordion-button" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    What is textUtils?
+                    <strong>What is TextPads?</strong>
                 </button>
                 </h2>
                 <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -50,7 +55,7 @@ export default function About() {
             <div className="accordion-item">
                 <h2 className="accordion-header">
                 <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Free to Use
+                    <strong>Free to Use</strong>
                 </button>
                 </h2>
                 <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -62,7 +67,7 @@ export default function About() {
             <div className="accordion-item">
                 <h2 className="accordion-header">
                 <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Platform Compatibility
+                <strong>Platform Compatibility</strong>
                 </button>
                 </h2>
                 <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
